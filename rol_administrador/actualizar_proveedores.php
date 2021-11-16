@@ -1,5 +1,32 @@
 <?php
 include 'conect.php';
+session_start();
+if (isset($_SESSION['nombre'])) {
+	$nombre=$_SESSION['nombre'];
+
+}else{
+	$nombre="";
+}
+if ($nombre=="") {
+	echo "<script>window.location='../index.html'</script>";
+}else{
+	?>
+	<div class="nombre">
+    <?php echo "Administrador :"?> <?php echo "$nombre" ?> <img width="15px" src="../img/linea.png" alt="">
+	</div>
+    <a href="../sesion/perfil_admi.php"><i class="fas fa-reply"></i></a> 
+	<?php
+}
+
+// try {
+// 	$sql="SELECT * FROM usuario";
+// 	$resultado = $base->prepare($sql);
+// 	$resultado->execute(array());
+// 	while ($consulta = $resultado->fetch(PDO::FETCH_ASSOC)) {
+// 	}
+// } catch (\Throwable $th) {
+// 	//throw $th;
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +35,10 @@ include 'conect.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>consulta proveedores</title>
-    <link rel="stylesheet" href="css/style-actua.css">
+    <link rel="stylesheet" href="../css/style-actua.css">
+    <link rel="stylesheet" href="../css/style_consultas.css">
+    <link rel="stylesheet" href="../icons/all.css">
+    <script src="js/script.js"></script>
 </head>
 <body>
     <?php 

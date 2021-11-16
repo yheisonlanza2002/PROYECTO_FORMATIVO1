@@ -3,7 +3,8 @@
     padding: 0;
 }
 body{
-    background-image: url(../proyecto_formativo/img/uusu.jpg);
+    /* background-color: gray; */
+    background-image: url(../img/fondo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     
@@ -44,13 +45,17 @@ input {
     background-color: transparent;
     color: rgb(0, 0, 0);
     font-size: 1em;
-}
+    outline: none;
+    /* border:none; */
+} 
 select{
     border: none;
     border-bottom: 1px solid rgb(0, 0, 0);
     background-color: transparent;
     color: rgb(0, 0, 0);
     font-size: 1em;
+    /* outline: none;
+    border: none; */
 }
 td{
     color: rgb(0, 0, 0);

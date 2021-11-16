@@ -2,33 +2,32 @@
 include 'conect.php';
 session_start();
 if (isset($_SESSION['nombre'])) {
-    $nombre=$_SESSION['nombre'];
+	$nombre=$_SESSION['nombre'];
 
 }else{
-    $nombre="";
+	$nombre="";
 }
 if ($nombre=="") {
-    echo "<script>window.location='index.html'</script>";
+	echo "<script>window.location='../index.html'</script>";
 }else{
-    ?>
-    <div class="nombre">
-        <?php echo "Cliente :"?> <?php echo "$nombre" ?> <img width="15px" src="img/linea.png" alt="">
-        <!-- <a id="cerrar" href="cerrar.php">cerrar seccion</a> -->
-    </div>
-    <a href="sesion/perfil_cliente.php"><i class="fas fa-reply"></i></a> 
-    
-    <?php
+	?>
+	<div class="nombre">
+		<?php echo "Administrador :"?> <?php echo "$nombre" ?> <img width="15px" src="../img/linea.png" alt="">
+	</div>
+	<a href="../sesion/perfil_admi.php"><i class="fas fa-reply"></i></a> 
+	<?php
 }
 
 // try {
-//     $sql="SELECT * FROM usuario WHERE pk_identificacion=id || nombre=nombre";
-//     $resultado = $base->prepare($sql);
-//     $resultado->execute(array());
-//     while ($consulta = $resultado->fetch(PDO::FETCH_ASSOC)) {
-//     }
+// 	$sql="SELECT * FROM usuario";
+// 	$resultado = $base->prepare($sql);
+// 	$resultado->execute(array());
+// 	while ($consulta = $resultado->fetch(PDO::FETCH_ASSOC)) {
+// 	}
 // } catch (\Throwable $th) {
-//     //throw $th;
+// 	//throw $th;
 // }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,9 +36,9 @@ if ($nombre=="") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>consulta productos</title>
-    <link rel="stylesheet" href="css/style_consultas.css">
-    <link rel="stylesheet" href="icons/all.css">
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="../css/style_consultas.css">
+    <link rel="stylesheet" href="../icons/all.css">
+    <script src="../js/script.js"></script>
 </head>
 <body>
     <!-- <label onclick="mostrarMenu();"><i class="fas fa-bars"></i></label>
@@ -53,7 +52,7 @@ if ($nombre=="") {
                 <li><a href="consulta_productos.php"><i class="fas fa-search"></i>Registro Productos</a></li>
             </ul>
         </nav> -->
-        <!-- <a href="sesion/perfil_cliente.php">Volver</a> -->
+        <!-- <a href="../sesion/perfil_admi.php"><i class="fas fa-reply"></i></a> -->
 <table>
         <tr>
             <td colspan="7" class="titulo">Consulta Productos</td>
@@ -66,7 +65,7 @@ if ($nombre=="") {
             <td class="colucnas">Valor</td> 
             <td class="colucnas">Stock</td> 
             <td class="colucnas">Categoria</td>
-            <!-- <td><img src="img/actualizar.png" width="30px" alt=""></td> -->
+            <td><img src="../img/actualizar.png" width="30px" alt=""></td>
         </tr>
         <tr>
             <?php
@@ -84,7 +83,7 @@ if ($nombre=="") {
                         <td class="registro"><?php echo $consulta['valor'];?></td>
                         <td class="registro"><?php echo $consulta['stock'];?></td>
                         <td class="registro"><?php echo $consulta['categoria'];?></td>
-                        <!-- <td><a href="actualizar_productos.php?cod2=<?php echo $consulta['codigo_pdto'];?>"><img src="img/actualizar.png" width="30px" alt=""></a></td> -->
+                        <td><a href="actualizar_productos.php?cod2=<?php echo $consulta['codigo_pdto'];?>"><img src="../img/actualizar.png" width="30px" alt=""></a></td>
                     </tr>
                     <?php
                     }

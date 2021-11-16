@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-09-2021 a las 00:30:29
--- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 8.0.7
+-- Tiempo de generación: 16-11-2021 a las 05:12:01
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 7.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -169,13 +169,20 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`codigo_pdto`, `nombre_pro`, `descripcion`, `valor`, `stock`, `categoria`, `fk_provedor`) VALUES
-(1, 'Vibranza', 'Locion femenina con aroma floral', '70000.00', 43, 'fragancia', 1),
-(2, 'Avellana', 'Gel exfoliante  para manos', '16900.00', 32, 'cuidado_personal', 1),
-(3, 'Vital', 'Shampoo 2 en 1 todo tipo de cabello', '27900.00', 42, 'cuidado_personal', 1),
-(4, 'Agu Mañana feliz', 'Shampoo cabello y cuerpo ', '27900.00', 25, 'maquillaje', 9),
-(5, 'Labial emn', 'Labial picmentado larga duracion ', '219033.00', 30, 'maquillaje', 1),
+(1, 'Vibranza', 'Locion femenina con aroma floral', '70000.00', 43, 'fragancia', 14),
+(2, 'Avellanas', 'Gel exfoliante  para manos', '16900.00', 323, 'cuidado_personal', 2),
+(3, 'Vital', 'Shampoo 2 en 1 todo tipo de cabello', '27900.00', 42, 'fragancia', 12),
+(4, 'Agu Mañana feliz', 'Shampoo cabello y cuerpo ', '27900.00', 22, 'bebe', 1),
+(5, 'Rose mate', 'Labial picmentado larga duracion ', '21900.00', 28, 'maquillaje', 1),
 (6, 'Arom', 'Locian masculina con aroma citrica', '110000.00', 12, 'fragancia', 1),
-(19, 'Exfoliante', 'Crema corporal', '250000.00', 33, 'maquillaje', 2);
+(9, 'labial', 'rojo', '3000.00', 3, 'maquillaje', 1),
+(20, 'labial', 'moradp', '2344.00', 23, 'cuidado_personal', 1),
+(21, 'labial', 'amarillo', '3000.00', 32, 'cuidado_personal', 2),
+(22, 'labial', 'moradp', '234.00', 23, 'fragancia', 9),
+(23, 'lands', 'eragter', '3.00', 45, 'maquillaje', 9),
+(24, 'polvos de maquillar', 'para la cara', '18000.00', 30, 'maquillaje', 9),
+(25, 'pestañina', 'para las pestañas', '5000.00', 45, 'maquillaje', 2),
+(26, 'lociion', 'perfume', '52000.00', 52, 'fragancia', 14);
 
 -- --------------------------------------------------------
 
@@ -194,10 +201,12 @@ CREATE TABLE `proveedor` (
 --
 
 INSERT INTO `proveedor` (`codigo`, `nit`, `nombre`) VALUES
-(1, '22859', 'Esika'),
+(1, '22855', 'Esika'),
 (2, '984211', 'Yambal'),
-(9, '234543', 'Natura'),
-(11, '2423545', 'Avon');
+(9, '234234', 'Natura'),
+(12, '2343242', 'Avon'),
+(13, '2364423', 'francs'),
+(14, '12354', 'lacoste');
 
 -- --------------------------------------------------------
 
@@ -220,12 +229,14 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`pk_identificacion`, `nombre`, `telefono`, `tipo_usuario`, `direccion`, `usuario`, `contraseña`) VALUES
-(23423423, 'Yheison', '345234', 'administrador', 'colombiano ', 'yhes@misena', '214324eqw'),
-(1003983623, 'Adriana Pinzon', '3293474379', 'cliente', 'calle 12 ', 'apinzon', '123'),
-(1004033920, 'Yheison Lanza', '3202786727', 'administrador', 'Acevedo', 'yheslanza@misena.edu.co', 'yheison200'),
-(1078746496, 'alba', '311580762346', 'cliente', 'pitalito', 'alba@ysdgcyfsa', '32534rtfs'),
+(12345, 'Yheisonnn', '3202786534', 'cliente', 'Acevedor', 'yhesi@misena.cog', '321'),
+(23423423, 'Yheison', '345234', 'administrador', 'colombiano ', 'yhes@misena.com', '0000'),
+(1004033920, 'Yheison Lanza', '3202786726', 'administrador', 'pitalito-huilag', 'yheslanza@misena.edu.co', '12345'),
+(1078746485, 'Albaluz rojas', '3115278362', 'cliente', 'acevedo- huilaj', 'albaluz@gmail.con', '1077'),
+(1078746496, 'albaluz', '3115807623463', 'cliente', 'Acevedo', 'alba@ysdgcyfsa3', '32534rtfs4'),
 (1080365876, 'Karen Cordoba', '3202786727', 'administrador', 'Pitalito', 'loren@misena.edu.co', 'lore432'),
 (1080365889, 'Derly Soto', '3212952396', 'administrador', 'Suaza', 'deryso@misena. edu', 'derly98'),
+(1086924579, 'Oscar Ordoñes', '3134117145', 'cliente', 'Nariño', 'oscar@gmail.com', '1478'),
 (1193043017, 'Yenifer Alvarado', '3212062308', 'administrador', 'Pitalito', 'yendalvarado@misena. edu', 'yenifer18');
 
 --
@@ -299,13 +310,13 @@ ALTER TABLE `envio`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `codigo_pdto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `codigo_pdto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedor`
 --
 ALTER TABLE `proveedor`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Restricciones para tablas volcadas

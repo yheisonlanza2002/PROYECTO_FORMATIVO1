@@ -33,6 +33,7 @@ input {
     background-color: transparent;
     color: rgb(12, 12, 12);
     font-size: 1.1em;
+    outline: none;
 }
 select{
     border: none;
@@ -40,6 +41,8 @@ select{
     background-color: transparent;
     color: rgb(0, 0, 0);
     font-size: 1.1em;
+    /* outline: none; */
+    /* border: none; */
 }
 .boton{
     color: black;

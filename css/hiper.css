@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(../img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+a{
+    color: indigo;
+    text-decoration: none;
+    width: 60px;
+    padding: 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 15px;
+    border: none;
+}
+a:hover{
+    background-color: gray;
+    color: white;
+}
+.titulo{
+    /* background-color: rgb(170, 161, 170); */
+    font-size: 1.2em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    /* padding: 20px; */
+    /* width: 30px; */
+    border: none;
+    border-radius: 30px;
+    /* margin-top: -15px; */
+}
+td{
+    text-align: center;
+    padding: 30px;
+    margin-top: 10px;
+}
+input[type="text"],input[type="password"]{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.fa-user-circle{
+    
+    font-size: 80px;
+    /* position: absolute; */
+    margin-top: -10px;
+    /* left: 50px; */
+}
+.icon{
+    border-bottom: 3px solid wheat;
+}
+tr{
+    border:2px solid white;
+}
+::placeholder{
+    text-align: center;
+    font-size: 1.2em;
+    
+}
+table{
+    background-color: whitesmoke;
+    margin: 0 auto;
+    border: none;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+input[type="submit"]{
+    padding: 15px;
+    width: 60%;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.1em;
+}
+input[type="submit"]:hover{
+    background-color: gray;
+    color: white;
+}

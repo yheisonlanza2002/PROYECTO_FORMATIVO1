@@ -1,43 +1,16 @@
 <?php
 include 'conect.php';
-session_start();
-if (isset($_SESSION['nombre'])) {
-	$nombre=$_SESSION['nombre'];
-
-}else{
-	$nombre="";
-}
-if ($nombre=="") {
-	echo "<script>window.location='index.html'</script>";
-}else{
-	?>
-	<!-- <div class="nombre">
-		<?php echo "Cliente :"?> <?php echo "$nombre" ?> <img width="15px" src="img/linea.png" alt="">
-	</div> -->
-	<?php
-}
-
-// try {
-// 	$sql="SELECT * FROM usuario";
-// 	$resultado = $base->prepare($sql);
-// 	$resultado->execute(array());
-// 	while ($consulta = $resultado->fetch(PDO::FETCH_ASSOC)) {
-// 	}
-// } catch (\Throwable $th) {
-// 	//throw $th;
-// }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>registro usuarios</title>
-	<link rel="stylesheet" href="css/style_consultas.css">
-	<link rel="stylesheet" href="css/style-usua.css">
-	<link rel="stylesheet" href="icons/all.css">
-    <script src="js/script.js"></script>
+	<link rel="stylesheet" href="../css/style-usua.css">
+	<link rel="stylesheet" href="../icons/all.css">
+    <script src="../js/script.js"></script>
 </head>
 <body>
-<!-- <label onclick="mostrarMenu();"><i class="fas fa-bars"></i></label>
+<label onclick="mostrarMenu();"><i class="fas fa-bars"></i></label>
         <nav id="menu-principal">
             <ul class="menu">
                 <li><a href="consulta_proveedores.php"><i class="fas fa-search"></i> Consulta Proveedor</a></li>
@@ -47,7 +20,7 @@ if ($nombre=="") {
                 <li><a href="registro_proveedores.php"><i class="fas fa-search"></i>Registro Proveedores</a></li>
                 <li><a href="registro_productos.php"><i class="fas fa-search"></i>Registro Productos</a></li>
             </ul>
-        </nav> -->
+        </nav>
 	<fieldset>
 		<div>
 			<form method="POST" action="">
@@ -59,8 +32,8 @@ if ($nombre=="") {
 						<td class="colucnas">TIPO USUARIO</td>
 					    <td>
                         <select name="txt3">
-							<!-- <option value=""></option> -->
-                            <!-- <option value="administrador">Administrador</option> -->
+							<option value=""></option>
+                            <option value="administrador">Administrador</option>
                             <option value="cliente">Cliente</option>
                         </select>
                         </td>
@@ -114,14 +87,12 @@ if ($nombre=="") {
 			$resultado = $base->prepare($sql);
             $resultado->execute(array(":pk_id"=>$ident,":nombr"=>$nomb,":tele"=>$telef,":tipou"=>$tipo_u,":direct"=>$direc,":usuar"=>$usua,":contr"=>$cont));
             ?>
-            <script language="javascript">window.alert(' Usuario registrado exitosamente!!');</script>
+            <script language="javascript">window.alert(' Usuario registrado exitosamente!!')</script>
             <?php
-			echo "<script>window.location='sesion/index_cliente.php'</script>";
             
         } catch (exception $e) {
             die('se produjo un error de conexion con la base de datos: '.$e->getmessage());
         }
 	}
-	
 	?>
 </html>

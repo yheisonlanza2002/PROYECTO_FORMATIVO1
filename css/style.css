@@ -4,7 +4,7 @@
 }
 
 body{
-    background-image: url(../proyecto_formativo/img/product.jpg);
+    background-image: url(../img/producto-belleza.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     
@@ -38,22 +38,27 @@ table{
     width: 50%;
     margin-left: 20px;
     height: 50px;
-    background: rgb(24,24,24);
+    background: gray;
     font-weight: 600;
     border-radius: 10px;
     cursor: pointer;
 }
 .boton:hover{
-    color: gray;
+    color: rgb(0, 0, 0);
+    background-color: gainsboro;
 }
 input {
     border: none;
-    border-bottom: 2px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
     background-color: transparent;
-    color: rgb(255, 255, 255);
+    /* color: rgb(255, 255, 255); */
+    color: black;
     font-size: 1.1em;
+    background-color: transparent;
+    outline: none;
 }
 select{
+    /* color: white; */
     border: none;
     border-bottom: 2px solid rgb(0, 0, 0);
     background-color: transparent;
@@ -70,12 +75,14 @@ td , tr{
 }
 .colucnas{
     border-radius: 4px;
-    color: rgb(255, 255, 255);
-    background-color: rgb(25 , 25 , 25);
+    /* color: rgb(255, 255, 255); */
+    background-color: rgb(165, 165, 165);
     padding: 10px;
     text-align: center;
     font-size: 1.2em;
-    border-bottom: 3px solid whitesmoke;
+    border-bottom: 2px solid  black;
+    
+
 
 }
 .registro{
@@ -96,7 +103,7 @@ a{
     color: white;
 }
 .fas ,.fab{
-    color: rgb(216, 216, 216);
+    color: rgb(0, 0, 0);
     font-size: 1.8em;
     list-style: none;
     margin-right: 0.5em;

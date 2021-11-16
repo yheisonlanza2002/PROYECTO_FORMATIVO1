@@ -8,9 +8,10 @@ include 'conect.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualizar Productos</title>
-    <link rel="stylesheet" href="css/style-actua.css">
+    <link rel="stylesheet" href="../css/style-actua.css">
 </head>
 <body>
+    <a href="../sesion/perfil_admi.php">regresar</a>
 <?php 
         try {
             $sql2="SELECT * FROM productos WHERE codigo_pdto=".$_REQUEST['cod2'].";";
